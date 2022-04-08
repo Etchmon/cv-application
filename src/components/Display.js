@@ -6,14 +6,12 @@ class Display extends Component {
     }
 
     render() {
-        console.log(this.props)
         const { person } = this.props;
-        console.log(person);
         return (
             <div>
                 <h1>{person.name}</h1>
-                <h1></h1>
-                <h1></h1>
+                <h1>{person.email}</h1>
+                <h1>{person.phone}</h1>
             </div>
         )
     }

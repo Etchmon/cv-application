@@ -5,7 +5,7 @@ import Display from "./components/Display";
 class App extends Component {
   constructor() {
     super()
-    this.update.bind(this);
+    this.onSubmitPersonal.bind(this);
     this.state = {
       personal: {
         name: '',
@@ -27,19 +27,22 @@ class App extends Component {
     }
   }
 
-  update = (person) => {
-    this.setState(person, () => {
-      console.log(this.state);
+  onSubmitPersonal = (person) => {
+    this.setState({
+      personal: {
+        name: person.personal.name,
+        email: person.personal.email,
+        phone: person.personal.phone,
+      },
     });
-
-  }
+  };
 
   render() {
     const { personal } = this.state;
     return (
 
       <div>
-        <Form update={this.update} />
+        <Form onSubmitPersonal={this.onSubmitPersonal} />
         <Display person={personal} />
       </div>
     )

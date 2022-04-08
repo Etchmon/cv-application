@@ -4,47 +4,20 @@ import Personal from "./Personal";
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.onSubmitPersonal.bind(this);
-        this.state = {
-            personal: {
-                name: '',
-                email: '',
-                phone: '',
-            },
-            education: {
-                school: '',
-                study: '',
-                date: '',
-            },
-            experience: {
-                company: '',
-                position: '',
-                description: '',
-                from: '',
-                till: '',
-            },
-        }
+        this.onSubmit.bind(this);
     };
 
-    onSubmitPersonal = (person) => {
-        this.setState({
-            personal: {
-                name: person.personal.name,
-                email: person.personal.email,
-                phone: person.personal.phone,
-            },
-        }, () => {
-            this.props.update(this.state);
-        });
-
+    onSubmit = (person) => {
+        this.props.onSubmitPersonal(person);
     };
+
 
     render() {
         // const { personal, education, experience } = this.state;
 
         return (
             <div>
-                <Personal onSubmitPersonal={this.onSubmitPersonal} />
+                <Personal onSubmitPersonal={this.onSubmit} />
             </div>
         )
     }
