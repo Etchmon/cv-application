@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Personal from "./Personal";
 
 class Form extends Component {
     constructor() {
@@ -29,9 +30,9 @@ class Form extends Component {
         const { personal, education, experience } = this.state;
 
         return (
-            <form>
-
-            </form>
+            <div>
+                <Personal />
+            </div>
         )
     }
 };
