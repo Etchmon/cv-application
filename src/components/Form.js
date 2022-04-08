@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Personal from "./Personal";
 
 class Form extends Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
+        this.onSubmitPersonal.bind(this);
         this.state = {
             personal: {
                 name: '',
@@ -26,12 +26,25 @@ class Form extends Component {
         }
     };
 
+    onSubmitPersonal = (person) => {
+        this.setState({
+            personal: {
+                name: person.personal.name,
+                email: person.personal.email,
+                phone: person.personal.phone,
+            },
+        }, () => {
+            this.props.update(this.state);
+        });
+
+    };
+
     render() {
-        const { personal, education, experience } = this.state;
+        // const { personal, education, experience } = this.state;
 
         return (
             <div>
-                <Personal />
+                <Personal onSubmitPersonal={this.onSubmitPersonal} />
             </div>
         )
     }

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 class Personal extends Component {
-    constructor() {
-        super();
-
+    constructor(props) {
+        super(props);
+        this.onSubmit.bind(this);
         this.state = {
             personal: {
                 name: '',
@@ -15,7 +15,7 @@ class Personal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        this.props.onSubmitPersonal(this.state);
     }
 
     handleNameChange = (e) => {
