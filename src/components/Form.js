@@ -26,12 +26,12 @@ class Form extends Component {
     };
 
     render() {
-        return (
-            <div>
-                <form>
+        const { personal, education, experience } = this.state;
 
-                </form>
-            </div>
+        return (
+            <form>
+
+            </form>
         )
     }
 };
