@@ -64,7 +64,7 @@ class App extends Component {
     const { personal, education, experience } = this.state;
     return (
 
-      <div>
+      <div className="main">
         <Form onSubmitPersonal={this.onSubmitPersonal} onSubmitEducation={this.onSubmitEducation} onSubmitExperience={this.onSubmitExperience} />
         <Display person={personal} education={education} experience={experience} />
       </div>
