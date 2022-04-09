@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import Personal from "./Personal";
+import Education from "./Education";
 
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.onSubmit.bind(this);
+        this.onSubmitPersonal.bind(this);
     };
 
-    onSubmit = (person) => {
+    onSubmitPersonal = (person) => {
         this.props.onSubmitPersonal(person);
+    };
+
+    onSubmitEducation = (edu) => {
+        this.props.onSubmitEducation(edu);
     };
 
 
@@ -17,7 +22,8 @@ class Form extends Component {
 
         return (
             <div>
-                <Personal onSubmitPersonal={this.onSubmit} />
+                <Personal onSubmitPersonal={this.onSubmitPersonal} />
+                <Education onSubmitEducation={this.onSubmitEducation} />
             </div>
         )
     }
