@@ -48,13 +48,25 @@ class App extends Component {
     });
   };
 
+  onSubmitExperience = (exp) => {
+    this.setState({
+      experience: {
+        company: exp.experience.company,
+        position: exp.experience.position,
+        description: exp.experience.description,
+        from: exp.experience.from,
+        till: exp.experience.till,
+      },
+    });
+  };
+
   render() {
-    const { personal, education } = this.state;
+    const { personal, education, experience } = this.state;
     return (
 
       <div>
-        <Form onSubmitPersonal={this.onSubmitPersonal} onSubmitEducation={this.onSubmitEducation} />
-        <Display person={personal} education={education} />
+        <Form onSubmitPersonal={this.onSubmitPersonal} onSubmitEducation={this.onSubmitEducation} onSubmitExperience={this.onSubmitExperience} />
+        <Display person={personal} education={education} experience={experience} />
       </div>
     )
   }

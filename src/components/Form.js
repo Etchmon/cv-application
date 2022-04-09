@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Personal from "./Personal";
 import Education from "./Education";
+import Experience from './Experience';
 
 class Form extends Component {
     constructor(props) {
@@ -16,6 +17,10 @@ class Form extends Component {
         this.props.onSubmitEducation(edu);
     };
 
+    onSubmitExperience = (exp) => {
+        this.props.onSubmitExperience(exp);
+    };
+
 
     render() {
         // const { personal, education, experience } = this.state;
@@ -24,6 +29,7 @@ class Form extends Component {
             <div>
                 <Personal onSubmitPersonal={this.onSubmitPersonal} />
                 <Education onSubmitEducation={this.onSubmitEducation} />
+                <Experience onSubmitExperience={this.onSubmitExperience} />
             </div>
         )
     }

@@ -6,8 +6,7 @@ class Display extends Component {
     }
 
     render() {
-        const { person, education } = this.props;
-        console.log(education);
+        const { person, education, experience } = this.props;
         return (
             <div>
                 <section>
@@ -19,6 +18,13 @@ class Display extends Component {
                     <h1>{education.school}</h1>
                     <h1>{education.study}</h1>
                     <h1>{education.date}</h1>
+                </section>
+                <section>
+                    <h1>{experience.company}</h1>
+                    <h1>{experience.position}</h1>
+                    <h1>{experience.description}</h1>
+                    <h1>{experience.from}</h1>
+                    <h1>{experience.till}</h1>
                 </section>
 
             </div>
