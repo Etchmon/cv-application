@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Form from './components/Form';
 import Display from "./components/Display";
+import "./styles/reset.css";
+import "./styles/App.css";
 
 class App extends Component {
   constructor() {

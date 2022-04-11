@@ -15,8 +15,16 @@ class Personal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        e.target.reset();
         this.props.onSubmitPersonal(this.state);
-    }
+        this.setState({
+            personal: {
+                name: '',
+                email: '',
+                phone: '',
+            },
+        })
+    };
 
     handleNameChange = (e) => {
         this.setState({
@@ -51,7 +59,7 @@ class Personal extends Component {
     render() {
         const { personal } = this.state;
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} id="pForm">
                 <legend>Personal Information</legend>
                 <label htmlFor="nameInput">Name</label>
                 <input onChange={this.handleNameChange} type="text" id="nameInput" value={personal.name} />
