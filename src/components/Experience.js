@@ -17,6 +17,7 @@ class Experience extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        e.target.reset();
         this.props.onSubmitExperience(this.state);
         this.setState({
             experience: {

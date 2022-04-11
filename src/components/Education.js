@@ -15,6 +15,7 @@ class Education extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        e.target.reset();
         this.props.onSubmitEducation(this.state);
         this.setState({
             education: {

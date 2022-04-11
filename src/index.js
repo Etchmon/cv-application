@@ -9,8 +9,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
-// Clear input forms after submit
 // Add form validations, javascript and css
 // Style display form
 // Add an edit button on the display side
