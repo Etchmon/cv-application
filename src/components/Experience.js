@@ -19,15 +19,8 @@ class Experience extends Component {
         e.preventDefault();
         e.target.reset();
         this.props.onSubmitExperience(this.state);
-        this.setState({
-            experience: {
-                company: '',
-                position: '',
-                description: '',
-                from: '',
-                till: '',
-            },
-        })
+        document.querySelector('#expForm').style.display = 'none';
+        document.querySelector('#resume-experience').style.display = 'grid';
     };
 
     handleCompanyChange = (e) => {
@@ -94,7 +87,7 @@ class Experience extends Component {
     render() {
         const { experience } = this.state;
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} id="expForm">
                 <legend>Work Experience</legend>
                 <label htmlFor="companyInput">Company</label>
                 <input onChange={this.handleCompanyChange} type="text" id="companyInput" value={experience.company} />

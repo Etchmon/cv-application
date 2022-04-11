@@ -5,22 +5,34 @@ class Display extends Component {
         super(props)
     }
 
+    editPersonal = () => {
+        document.querySelector('#pForm').style.display = 'grid';
+    }
+
+    editExperience = () => {
+        document.querySelector('#expForm').style.display = 'grid';
+    }
+
+    editEducation = () => {
+        document.querySelector('#eduForm').style.display = 'grid';
+    }
+
     render() {
         const { person, education, experience } = this.props;
         return (
             <div>
-                <section id="resume-personal">
+                <section id="resume-personal" onClick={this.editPersonal}>
                     <h1 id="resume-personal-name">{person.name}</h1>
                     <h2 id="resume-personal-email">{person.email}</h2>
                     <h2 id="resume-personal-phone">{person.phone}</h2>
                 </section>
-                <section id="resume-education">
+                <section id="resume-education" onClick={this.editEducation}>
                     <h1>Education</h1>
                     <h2 id="resume-education-school">{education.school}</h2>
                     <h2 id="resume-education-study">{education.study}</h2>
                     <h2 id="resume-education-date">{education.date}</h2>
                 </section>
-                <section id="resume-experience">
+                <section id="resume-experience" onClick={this.editExperience}>
                     <h1>Experience</h1>
                     <h2 id="resume-experience-company">{experience.company}</h2>
                     <h2 id="resume-experience-position">{experience.position}</h2>

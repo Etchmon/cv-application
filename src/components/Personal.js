@@ -17,13 +17,8 @@ class Personal extends Component {
         e.preventDefault();
         e.target.reset();
         this.props.onSubmitPersonal(this.state);
-        this.setState({
-            personal: {
-                name: '',
-                email: '',
-                phone: '',
-            },
-        });
+        document.querySelector('#pForm').style.display = 'none';
+        document.querySelector('#resume-personal').style.display = 'grid';
     };
 
     handleNameChange = (e) => {

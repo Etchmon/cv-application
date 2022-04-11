@@ -17,13 +17,8 @@ class Education extends Component {
         e.preventDefault();
         e.target.reset();
         this.props.onSubmitEducation(this.state);
-        this.setState({
-            education: {
-                school: '',
-                study: '',
-                date: '',
-            },
-        });
+        document.querySelector('#eduForm').style.display = 'none';
+        document.querySelector('#resume-education').style.display = 'grid';
     };
 
     handleSchoolChange = (e) => {
@@ -59,7 +54,7 @@ class Education extends Component {
     render() {
         const education = this.state;
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} id="eduForm">
                 <legend>Education</legend>
                 <label htmlFor="schoolInput">School</label>
                 <input onChange={this.handleSchoolChange} type="text" id="schoolInput" value={education.school} />

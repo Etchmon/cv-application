@@ -7,6 +7,10 @@ class Form extends Component {
     constructor(props) {
         super(props);
         this.onSubmitPersonal.bind(this);
+
+        this.state = {
+            person: this.props.state,
+        }
     };
 
     onSubmitPersonal = (person) => {
@@ -21,13 +25,12 @@ class Form extends Component {
         this.props.onSubmitExperience(exp);
     };
 
-
     render() {
         // const { personal, education, experience } = this.state;
 
         return (
             <div>
-                <Personal onSubmitPersonal={this.onSubmitPersonal} />
+                <Personal onSubmitPersonal={this.onSubmitPersonal} data={this.state} />
                 <Education onSubmitEducation={this.onSubmitEducation} />
                 <Experience onSubmitExperience={this.onSubmitExperience} />
             </div>

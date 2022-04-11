@@ -14,3 +14,4 @@ ReactDOM.render(
 // Add an edit button on the display side
 // Edit button brings up the appropriate form, fill input with old data, onSubmit set the new data
 // Only show 1 form at a time, onSubmit go to next form
+// Add location to personal section
