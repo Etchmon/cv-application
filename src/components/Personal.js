@@ -23,7 +23,7 @@ class Personal extends Component {
                 email: '',
                 phone: '',
             },
-        })
+        });
     };
 
     handleNameChange = (e) => {

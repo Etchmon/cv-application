@@ -16,6 +16,13 @@ class Education extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmitEducation(this.state);
+        this.setState({
+            education: {
+                school: '',
+                study: '',
+                date: '',
+            },
+        });
     };
 
     handleSchoolChange = (e) => {

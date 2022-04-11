@@ -18,6 +18,15 @@ class Experience extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmitExperience(this.state);
+        this.setState({
+            experience: {
+                company: '',
+                position: '',
+                description: '',
+                from: '',
+                till: '',
+            },
+        })
     };
 
     handleCompanyChange = (e) => {
