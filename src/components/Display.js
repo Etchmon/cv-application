@@ -23,8 +23,9 @@ class Display extends Component {
             <div>
                 <section id="resume-personal" onClick={this.editPersonal}>
                     <h1 id="resume-personal-name">{person.name}</h1>
-                    <h2 id="resume-personal-email">{person.email}</h2>
                     <h2 id="resume-personal-phone">{person.phone}</h2>
+                    <h2 id="resume-personal-email">{person.email}</h2>
+                    <h2 id="resume-personal-location">{person.location}</h2>
                 </section>
                 <section id="resume-education" onClick={this.editEducation}>
                     <h1>Education</h1>

@@ -9,6 +9,7 @@ class Personal extends Component {
                 name: '',
                 email: '',
                 phone: '',
+                location: '',
             },
         };
     };
@@ -27,6 +28,7 @@ class Personal extends Component {
                 name: e.target.value,
                 email: this.state.personal.email,
                 phone: this.state.personal.phone,
+                location: this.state.personal.location,
             }
         });
     };
@@ -37,6 +39,7 @@ class Personal extends Component {
                 name: this.state.personal.name,
                 email: e.target.value,
                 phone: this.state.personal.phone,
+                location: this.state.personal.location,
             }
         });
     };
@@ -47,6 +50,18 @@ class Personal extends Component {
                 name: this.state.personal.name,
                 email: this.state.personal.email,
                 phone: e.target.value,
+                location: this.state.personal.location,
+            }
+        });
+    };
+
+    handleLocationChange = (e) => {
+        this.setState({
+            personal: {
+                name: this.state.personal.name,
+                email: this.state.personal.email,
+                phone: this.state.personal.phone,
+                location: e.target.value,
             }
         });
     };
@@ -62,6 +77,8 @@ class Personal extends Component {
                 <input onChange={this.handleEmailChange} type="text" id="emailInput" value={personal.email} />
                 <label htmlFor="nameInput">Phone</label>
                 <input onChange={this.handlePhoneChange} type="text" id="phoneInput" value={personal.phone} />
+                <label htmlFor="locationInput">Location</label>
+                <input onChange={this.handleLocationChange} type="text" id="locationInput" value={personal.location} />
                 <button type="Submit">
                     Add
                 </button>

@@ -14,6 +14,7 @@ class App extends Component {
         name: '',
         email: '',
         phone: '',
+        location: '',
       },
       education: {
         school: '',
@@ -36,6 +37,7 @@ class App extends Component {
         name: person.personal.name,
         email: person.personal.email,
         phone: person.personal.phone,
+        location: person.personal.location
       },
     });
   };
