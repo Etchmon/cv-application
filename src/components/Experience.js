@@ -27,10 +27,10 @@ class Experience extends Component {
     };
 
     cssValidate = () => {
-        const arr = Array.from(document.querySelectorAll('#expForm input'));
+        const arr = Array.from(document.querySelectorAll('.input'));
         arr.forEach(element => {
             if (element.value === '') {
-                element.style.borderColor = 'crimson'
+                element.style.borderColor = '#d90429'
             } else {
                 element.style.borderColor = ''
             }
@@ -111,15 +111,15 @@ class Experience extends Component {
             <form onSubmit={this.onSubmit} id="expForm">
                 <legend>Work Experience</legend>
                 <label htmlFor="companyInput">Company</label>
-                <input onChange={this.handleCompanyChange} type="text" id="companyInput" value={experience.company} />
+                <input onChange={this.handleCompanyChange} type="text" id="companyInput" className="input" value={experience.company} />
                 <label htmlFor="positionInput">Position</label>
-                <input onChange={this.handlePositionChange} type="text" id="positionInput" value={experience.position} />
+                <input onChange={this.handlePositionChange} type="text" id="positionInput" className="input" value={experience.position} />
                 <label htmlFor="descriptionInput">Description</label>
-                <input onChange={this.handleDescriptionChange} type="text" id="descriptionInput" value={experience.description} />
+                <textarea onChange={this.handleDescriptionChange} type="text" rows="4" id="descriptionInput" className="input" value={experience.description} />
                 <label htmlFor="fromInput">Date Started</label>
-                <input onChange={this.handleFromChange} type="text" id="fromInput" value={experience.from} />
+                <input onChange={this.handleFromChange} type="month" id="fromInput" className="input" value={experience.from} />
                 <label htmlFor="tillInput">Date Ended or Current</label>
-                <input onChange={this.handleTillChange} type="text" id="tillInput" value={experience.till} />
+                <input onChange={this.handleTillChange} type="text" id="tillInput" className="input" value={experience.till} />
                 <button type="Submit">
                     Add
                 </button>

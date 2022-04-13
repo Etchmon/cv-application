@@ -29,7 +29,7 @@ class Personal extends Component {
         const arr = Array.from(document.querySelectorAll('#pForm input'));
         arr.forEach(element => {
             if (element.value === '') {
-                element.style.borderColor = 'crimson'
+                element.style.borderColor = '#d90429'
             } else {
                 element.style.borderColor = ''
             }

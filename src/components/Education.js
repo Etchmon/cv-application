@@ -28,7 +28,7 @@ class Education extends Component {
         const arr = Array.from(document.querySelectorAll('#eduForm input'));
         arr.forEach(element => {
             if (element.value === '') {
-                element.style.borderColor = 'crimson'
+                element.style.borderColor = '#d90429'
             } else {
                 element.style.borderColor = ''
             }
@@ -82,7 +82,7 @@ class Education extends Component {
                 <label htmlFor="schoolInput">Subject of Study</label>
                 <input onChange={this.handleStudyChange} type="text" id="studyInput" value={education.study} />
                 <label htmlFor="schoolInput">Date of Completion</label>
-                <input onChange={this.handleDateChange} type="text" id="dateInput" value={education.date} />
+                <input onChange={this.handleDateChange} type="month" id="dateInput" value={education.date} />
                 <button type="Submit">
                     Add
                 </button>

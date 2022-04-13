@@ -26,7 +26,6 @@ class Form extends Component {
     };
 
     render() {
-        // const { personal, education, experience } = this.state;
 
         return (
             <div className="form-container">
