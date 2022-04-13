@@ -29,9 +29,9 @@ class Personal extends Component {
         const arr = Array.from(document.querySelectorAll('#pForm input'));
         arr.forEach(element => {
             if (element.value === '') {
-                element.style.borderColor = '#d90429'
+                element.style.border = '2px solid #d90429'
             } else {
-                element.style.borderColor = ''
+                element.style.border = 'none'
             }
         });
     }
