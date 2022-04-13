@@ -38,7 +38,7 @@ class Personal extends Component {
 
     formValidate = (e) => {
         const { name, email, phone, location } = this.state.personal;
-        if (name === '' || email === '' || phone === '' || location == '') {
+        if (name === '' || email === '' || phone === '' || location === '') {
             return true;
         }
     };

@@ -20,7 +20,7 @@ class Display extends Component {
     render() {
         const { person, education, experience } = this.props;
         return (
-            <div>
+            <div className="display">
                 <section id="resume-personal" onClick={this.editPersonal}>
                     <h1 id="resume-personal-name">{person.name}</h1>
                     <h2 id="resume-personal-phone">{person.phone}</h2>

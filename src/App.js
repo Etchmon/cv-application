@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./components/Header";
 import Form from './components/Form';
 import Display from "./components/Display";
 import "./styles/reset.css";
@@ -69,6 +70,7 @@ class App extends Component {
     return (
 
       <div className="main">
+        <Header />
         <Form onSubmitPersonal={this.onSubmitPersonal} onSubmitEducation={this.onSubmitEducation} onSubmitExperience={this.onSubmitExperience} />
         <Display person={personal} education={education} experience={experience} />
       </div>
