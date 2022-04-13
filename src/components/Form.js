@@ -29,7 +29,7 @@ class Form extends Component {
         // const { personal, education, experience } = this.state;
 
         return (
-            <div>
+            <div className="form-container">
                 <Personal onSubmitPersonal={this.onSubmitPersonal} data={this.state} />
                 <Education onSubmitEducation={this.onSubmitEducation} />
                 <Experience onSubmitExperience={this.onSubmitExperience} />

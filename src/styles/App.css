@@ -20,15 +20,36 @@ html {
   grid-template-rows: 1fr;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  width: 50%;
 }
 
 section:hover {
   background-color: rgb(34 139 34 / 50%);
   cursor: pointer;
+}
+
+form input {
+  margin-bottom: 5px;
+}
+
+form input:focus {
+  border-color: blue;
+}
+
+form button {
+  height: 2rem;
+  width: 4rem;
 }
 
 form legend {

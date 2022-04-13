@@ -4,6 +4,7 @@ class Education extends Component {
     constructor() {
         super();
         this.onSubmit.bind(this);
+        this.formValidate.bind(this);
         this.state = {
             education: {
                 school: '',
@@ -16,9 +17,29 @@ class Education extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         e.target.reset();
+        this.cssValidate();
+        if (this.formValidate()) return;
         this.props.onSubmitEducation(this.state);
         document.querySelector('#eduForm').style.display = 'none';
         document.querySelector('#resume-education').style.display = 'grid';
+    };
+
+    cssValidate = () => {
+        const arr = Array.from(document.querySelectorAll('#eduForm input'));
+        arr.forEach(element => {
+            if (element.value === '') {
+                element.style.borderColor = 'crimson'
+            } else {
+                element.style.borderColor = ''
+            }
+        });
+    };
+
+    formValidate = (e) => {
+        const { school, study, date } = this.state.education;
+        if (school === '' || study === '' || date === '') {
+            return true;
+        }
     };
 
     handleSchoolChange = (e) => {

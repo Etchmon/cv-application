@@ -4,6 +4,7 @@ class Personal extends Component {
     constructor(props) {
         super(props);
         this.onSubmit.bind(this);
+        this.formValidate.bind(this);
         this.state = {
             personal: {
                 name: '',
@@ -16,10 +17,30 @@ class Personal extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
+        this.cssValidate();
+        if (this.formValidate()) return;
         e.target.reset();
         this.props.onSubmitPersonal(this.state);
         document.querySelector('#pForm').style.display = 'none';
         document.querySelector('#resume-personal').style.display = 'grid';
+    };
+
+    cssValidate = () => {
+        const arr = Array.from(document.querySelectorAll('#pForm input'));
+        arr.forEach(element => {
+            if (element.value === '') {
+                element.style.borderColor = 'crimson'
+            } else {
+                element.style.borderColor = ''
+            }
+        });
+    }
+
+    formValidate = (e) => {
+        const { name, email, phone, location } = this.state.personal;
+        if (name === '' || email === '' || phone === '' || location == '') {
+            return true;
+        }
     };
 
     handleNameChange = (e) => {

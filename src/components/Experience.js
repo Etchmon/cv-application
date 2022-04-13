@@ -4,6 +4,7 @@ class Experience extends Component {
     constructor() {
         super();
         this.onSubmit.bind(this);
+        this.formValidate.bind(this);
         this.state = {
             experience: {
                 company: '',
@@ -18,9 +19,29 @@ class Experience extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         e.target.reset();
+        this.cssValidate();
+        if (this.formValidate()) return;
         this.props.onSubmitExperience(this.state);
         document.querySelector('#expForm').style.display = 'none';
         document.querySelector('#resume-experience').style.display = 'grid';
+    };
+
+    cssValidate = () => {
+        const arr = Array.from(document.querySelectorAll('#expForm input'));
+        arr.forEach(element => {
+            if (element.value === '') {
+                element.style.borderColor = 'crimson'
+            } else {
+                element.style.borderColor = ''
+            }
+        });
+    };
+
+    formValidate = (e) => {
+        const { company, position, description, from, till } = this.state.experience;
+        if (company === '' || position === '' || description === '' || from === '' || till === '') {
+            return true;
+        }
     };
 
     handleCompanyChange = (e) => {
